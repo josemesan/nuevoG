@@ -1,4 +1,18 @@
 <div class="footer">
     <p>This is your footer</p>
 
+    <tr>
+        <td> "COLUMNA 1 " </td>
+        <td> " COLUMNA 2" </td>
+    </tr>
+
+    <tr *ngFor="let trenes of listaTren ;trackBy: trackId">
+        <td> hola {{trenes.id}}</td>
+        <td> hola {{trenes.id}}</td>
+    </tr>
+
+    <tr *ngFor="let tablaTrenes of tablaTrenes ;trackBy: trackId">
+        <td>{{tablaTrenes.id}}</td>
+        <td>{{tablaTrenes.numeroTrenes}}</td>
+    </tr>
 </div>

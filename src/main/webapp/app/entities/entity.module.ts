@@ -6,6 +6,7 @@ import { LogobdLineaModule } from './linea/linea.module';
 import { LogobdEventoModule } from './evento/evento.module';
 import { LogobdFechaModule } from './fecha/fecha.module';
 import { LogobdTrenModule } from './tren/tren.module';
+
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({

@@ -26,6 +26,7 @@ import {
 } from './layouts';
 
 import { GraficaComponent } from './grafica/grafica.component';
+import { TrenListaService} from './entities/tren/tren.lista.service';
 
 @NgModule({
     imports: [
@@ -50,6 +51,7 @@ import { GraficaComponent } from './grafica/grafica.component';
     ],
     providers: [
         ProfileService,
+        TrenListaService,
         customHttpProvider(),
         PaginationConfig,
         UserRouteAccessService

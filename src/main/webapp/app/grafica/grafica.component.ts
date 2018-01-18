@@ -1,11 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { LogobdEntityModule} from '../entities/entity.module';
+import {Subscription} from 'rxjs/Rx';
+import {TablaTrenesService} from '../entities/tabla-trenes/tabla-trenes.service';
+import {JhiAlertService, JhiEventManager} from 'ng-jhipster';
+import {TablaTrenes} from '../entities/tabla-trenes/tabla-trenes.model';
+import {Principal, ResponseWrapper} from '../shared';
 
 @Component({
     selector: 'jhi-grafica',
     templateUrl: './grafica.component.html',
+    providers: [LogobdEntityModule],
     styles: []
 })
 export class GraficaComponent { // lineChart
+
+    tablaTrenes: TablaTrenes[];
+
     public lineChartData: Array<any> = [
         {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
         {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
@@ -43,6 +53,23 @@ export class GraficaComponent { // lineChart
     ];
     public lineChartLegend = true;
     public lineChartType = 'line';
+
+    constructor(
+        private tablaTrenesService: TablaTrenesService,
+        private jhiAlertService: JhiAlertService) {
+    }
+
+    loadAll() {
+        this.tablaTrenesService.query().subscribe(
+            (res: ResponseWrapper) => {
+                this.tablaTrenes = res.json;
+            },
+            (res: ResponseWrapper) => this.onError(res.json)
+        );
+    }
+    private onError(error) {
+        this.jhiAlertService.error(error.message, null, null);
+    }
 
     public randomize(): void {
         const _lineChartData: Array<any> = new Array(this.lineChartData.length);
