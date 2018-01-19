@@ -6,3 +6,4 @@ export * from './tren-delete-dialog.component';
 export * from './tren-detail.component';
 export * from './tren.component';
 export * from './tren.route';
+export * from './tren.lista.service';

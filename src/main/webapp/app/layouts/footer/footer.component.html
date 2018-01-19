@@ -6,9 +6,9 @@
         <td> " COLUMNA 2" </td>
     </tr>
 
-    <tr *ngFor="let trenes of listaTren ;trackBy: trackId">
-        <td> hola {{trenes.id}}</td>
-        <td> hola {{trenes.id}}</td>
+    <tr *ngFor="let trenes of loadLista();trackBy: trackId">
+        <td> {{trenes.id}}</td>
+        <td> {{trenes.id}}</td>
     </tr>
 
     <tr *ngFor="let tablaTrenes of tablaTrenes ;trackBy: trackId">

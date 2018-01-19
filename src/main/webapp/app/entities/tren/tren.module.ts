@@ -11,6 +11,7 @@ import {
     TrenPopupComponent,
     TrenDeletePopupComponent,
     TrenDeleteDialogComponent,
+    TrenListaService,
     trenRoute,
     trenPopupRoute,
 } from './';
@@ -42,6 +43,7 @@ const ENTITY_STATES = [
     ],
     providers: [
         TrenService,
+        TrenListaService,
         TrenPopupService,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

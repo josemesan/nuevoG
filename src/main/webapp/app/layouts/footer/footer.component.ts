@@ -43,8 +43,8 @@ export class FooterComponent implements OnInit, OnDestroy  {
         );
     }
 
-    loadLista(){
-       this.listaTren = this.trenListaService.getLista();
+    loadLista() {
+       return this.trenListaService.trens;
     }
     ngOnInit() {
         this.loadAll();
@@ -52,7 +52,7 @@ export class FooterComponent implements OnInit, OnDestroy  {
             this.currentAccount = account;
         });
         this.registerChangeInTablaTrenes();
-        this.loadLista();
+        this.trenListaService.ngOnInit()
     }
 
         trackId(index: number, item: TablaTrenes) {
