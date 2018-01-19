@@ -2,13 +2,18 @@
     <p>This is your footer</p>
 
     <tr>
-        <td> "COLUMNA 1 " </td>
-        <td> " COLUMNA 2" </td>
+        <td> "trenes 1 " </td>
+        <td> " trenes 2" </td>
     </tr>
 
     <tr *ngFor="let trenes of loadLista();trackBy: trackId">
         <td> {{trenes.id}}</td>
-        <td> {{trenes.id}}</td>
+        <td> {{trenes.numero}}</td>
+        <td> {{trenes.viajeros}}</td>
+    </tr>
+    <tr>
+        <td> "tabla 1 " </td>
+        <td> " tabla 2" </td>
     </tr>
 
     <tr *ngFor="let tablaTrenes of tablaTrenes ;trackBy: trackId">
